@@ -52,4 +52,9 @@ public class Book {
 	public void setPrice(double price) {
 		this.price = price;
 	}
+	
+	public String toString() {
+		String bookStr = this.title + " written by " + this.author + " is " + this.price + " and has ISBN " + this.ISBN;
+		return bookStr;
+	}
 }
