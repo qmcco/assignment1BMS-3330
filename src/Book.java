@@ -7,19 +7,44 @@ public class Book {
 	private String ISBN;
 	private double price;
 	
+	/**
+	 * This is the default constructor, it initializes the title, author, ISBN, and price.
+	 * @param title: This field holds the title of the book.
+	 * @param author: This filed stores the name of the author.
+	 * @param ISBN: This field stores the ISBN of the book.
+	 * @param price: This field stores the price of the book as a double.
+	 */
 	public Book() {
 		title = "Unknown";
 		author = "Unknown";
 		ISBN = "Unknown";
 		price = 0.0;
 	}
-	//test
 	
+	/**
+	 * This is the parameterized constructor, it sets all of the attributes of 
+	 * 	the book using the given parameters.
+	 * @param title: Sets the title attribute.
+	 * @param author: Sets the author attribute.
+	 * @param ISBN: Sets the ISBN attribute.
+	 * @param price: Sets the price attribute.
+	 */
 	public Book(String title, String author, String ISBN, double price) {
 		this.title = title;
 		this.author = author;
 		this.ISBN = ISBN;
 		this.price = price;
+	}
+	
+	/**
+	 * This is the copy constructor, it creates a new book object using a reference to another book.
+	 * @param copy
+	 */
+	public Book (Book copy) {
+		this.title = copy.title;
+		this.author = copy.author;
+		this.ISBN = copy.ISBN;
+		this.price = copy.price;
 	}
 	
 	public String getTitle() {
