@@ -57,4 +57,15 @@ public class Book {
 		String bookStr = this.title + " written by " + this.author + " is " + this.price + " and has ISBN " + this.ISBN;
 		return bookStr;
 	}
+	
+	@Override
+	
+	public boolean equals(Object other) {
+		if(other instanceof Book) {
+			if(this.ISBN == ((Book)other).ISBN) {
+				return true;
+			}
+		}
+		return false;
+	}
 }
