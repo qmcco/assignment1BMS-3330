@@ -1,5 +1,4 @@
 
-//
 public class Library {
 	private Book[] books = new Book[5];
 	private int count;
@@ -11,6 +10,11 @@ public class Library {
 		count = 0;
 	}
 	
+	/**
+	 * This method adds the given book to the book array as long as it isn't full.
+	 * @param Book book: A book object is passed so that it can be added to the array.
+	 * @return Returns true or false based on whether the book was found.
+	 */
 	public boolean addBook(Book book) {
 		int empCheck = 0;
 		for(int i = 0; i < 5; i++) {
@@ -28,6 +32,11 @@ public class Library {
 		return false;
 	}
 	
+	/**
+	 * This method removes the given book from the array.
+	 * @param Book book: A book object is passed so that it can be removed if it exists in the array.
+	 * @return Returns true or false based on whether the book was successfully removed.
+	 */
 	public boolean removeBook(Book book) {
 		for(int i = 0; i < books.length; i++) {
 			if(this.books[i] != null) {
@@ -43,6 +52,12 @@ public class Library {
 		return false;
 	}
 	
+	/**
+	 * This method iterates through the array and if the given ISBN matches the ISBN of a book in the
+	 * 	array, the book is returned. If it isn't found, null is returned.
+	 * @param String ISBN: The ISBN that is being searched for.
+	 * @return If the book with the given ISBN is found, it is returned. If it isn't found, null is returned.
+	 */
 	public Book searchByISBN(String ISBN) {
 		System.out.println("Searching for book with ISBN: " + ISBN + "...");
 		for(int i = 0; i < books.length; i++) {
@@ -56,6 +71,9 @@ public class Library {
 		return null;
 	}
 	
+	/**
+	 * This method iterates through the book array and uses toString to print each book neatly.
+	 */
 	public void displayBooks() {
 		System.out.println("All books in the library:");
 		for(int i = 0; i < books.length; i++) {
