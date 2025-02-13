@@ -40,13 +40,17 @@ public class Book {
 	 * This is the copy constructor, it creates a new book object using a reference to another book.
 	 * @param copy
 	 */
-	public Book (Book copy) {
-		this.title = copy.title;
-		this.author = copy.author;
-		this.ISBN = copy.ISBN;
-		this.price = copy.price;
+	public Book (Book other) {
+		this.title = other.title;
+		this.author = other.author;
+		this.ISBN = other.ISBN;
+		this.price = other.price;
 	}
 	
+	/**
+	 * These are the getter methods for each book attribute. They simply return
+	 * the value stored in the specified field.
+	 */
 	public String getTitle() {
 		return this.title;
 	}
@@ -63,6 +67,10 @@ public class Book {
 		return this.price;
 	}
 	
+	/**
+	 * These are the setter methods for each book attribute. They take a value
+	 * for a specified filed, and set it to that field.
+	 */
 	public void setTitle(String title) {
 		this.title = title;
 	}
@@ -79,13 +87,19 @@ public class Book {
 		this.price = price;
 	}
 	
+	/**
+	 * This method returns a string with the information about the book.
+	 */
+	@Override
 	public String toString() {
-		String bookStr = this.title + " written by " + this.author + " is " + this.price + " and has ISBN " + this.ISBN;
+		String bookStr = this.title + " by " + this.author + " (ISBN: " + this.ISBN + ", $" + this.price + ")";
 		return bookStr;
 	}
 	
+	/**
+	 * This method checks if two of books have the same ISBN.
+	 */
 	@Override
-	
 	public boolean equals(Object other) {
 		if(other instanceof Book) {
 			if(this.ISBN == ((Book)other).ISBN) {
