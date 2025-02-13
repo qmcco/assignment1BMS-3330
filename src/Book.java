@@ -1,6 +1,7 @@
 
 import java.lang.String;
 
+//
 public class Book {
 	private String title;
 	private String author;
